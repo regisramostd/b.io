@@ -1,3 +1,15 @@
+Entendido\! Fiz todas as atualizações solicitadas:
+
+1.  **Removi os comentários** do código para deixá-lo mais limpo.
+2.  **Adicionei os dois novos projetos** ("Sonic Spectrum" e "Curso de Humanidades") na seção de projetos, utilizando imagens de placeholder adequadas para cada tema.
+
+O layout da grade de projetos se ajustará automaticamente para exibir os quatro itens.
+
+Aqui está o código final pronto para ser utilizado:
+
+### Código Final Atualizado
+
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -60,10 +72,9 @@
         section {
             padding: 6rem 0;
             border-bottom: 1px solid var(--border-color);
-            overflow: hidden; /* Para conter animações */
+            overflow: hidden;
         }
 
-        /* Animações de Entrada */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -74,7 +85,6 @@
             transform: translateY(0);
         }
 
-        /* --- Header --- */
         .main-header {
             background-color: transparent;
             padding: 1rem 0;
@@ -127,7 +137,6 @@
             width: 100%;
         }
 
-        /* --- Seção Hero --- */
         @keyframes kenburns {
             0% { transform: scale(1.05) translate(0, 0); }
             100% { transform: scale(1) translate(0, 0); }
@@ -155,7 +164,7 @@
             font-size: 1.5rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
-            min-height: 50px; /* Evita que o layout pule */
+            min-height: 50px;
         }
         .typewriter-cursor {
             display: inline-block;
@@ -180,7 +189,6 @@
             color: #fff;
         }
 
-        /* --- Seção Sobre --- */
         #about .about-content {
             display: flex;
             align-items: center;
@@ -203,7 +211,6 @@
             color: var(--text-secondary);
         }
 
-        /* --- Seção Projetos --- */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -253,10 +260,9 @@
             font-weight: 600;
         }
 
-        /* --- Seção Contato --- */
         #contact .container {
             text-align: center;
-            max-width: 800px; /* Aumentado para acomodar o selo do LinkedIn */
+            max-width: 800px; 
         }
         #contact p {
             font-size: 1.1rem;
@@ -266,15 +272,15 @@
         .contact-methods {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center; 
             gap: 3rem;
             flex-wrap: wrap;
         }
         .social-links {
             display: flex;
-            flex-direction: column; /* Organiza os ícones em coluna */
-            gap: 1.5rem; /* Espaçamento entre os ícones */
-            align-items: center; /* Centraliza os ícones */
+            flex-direction: column; 
+            justify-content: center; 
+            gap: 2rem; 
         }
         .social-links a {
             color: var(--text-color);
@@ -292,12 +298,10 @@
             height: 32px;
         }
         
-        /* Estilos para o badge do LinkedIn */
         .linkedin-badge-container {
-             margin-top: 2rem;
+            margin-top: 0;
         }
 
-        /* --- Footer --- */
         footer {
             text-align: center;
             padding: 2rem 0;
@@ -305,7 +309,6 @@
             border-top: 1px solid var(--border-color);
         }
 
-        /* --- Responsividade --- */
         @media (max-width: 768px) {
             .main-header .container {
                 flex-direction: column;
@@ -375,15 +378,31 @@
                         <div class="project-card-content">
                             <h3>Predictive Health AI Engine</h3>
                             <p>Pipeline inteligente que combina e-SUS PEC, IA generativa (GPT), predição de faltas e WhatsApp automatizado para otimizar a agenda e reduzir ausências em consultas.</p>
-                            <a href="https://github.com/regisramostd" target="_blank">Saiba Mais &rarr;</a>
+                            <a href="https://github.com/regisramostd" target="_blank">Saiba Mais →</a>
                         </div>
                     </div>
-                    <div class="project-card reveal" style="transition-delay: 200ms;">
+                    <div class="project-card reveal">
                         <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1973&auto=format&fit=crop" alt="Livro Filosofia da Engenharia">
                         <div class="project-card-content">
                             <h3>Filosofia Aplicada à Engenharia</h3>
                             <p>Obra autoral que propõe um novo perfil de engenheiro-pensador, integrando ética, complexidade e pensamento sistêmico ao desenvolvimento tecnológico.</p>
-                            <a href="https://github.com/regisramostd" target="_blank">Ver Publicação &rarr;</a>
+                            <a href="https://github.com/regisramostd" target="_blank">Ver Publicação →</a>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop" alt="Podcast Sonic Spectrum">
+                        <div class="project-card-content">
+                            <h3>Sonic Spectrum</h3>
+                            <p>Podcast sobre música clássica no YouTube, explorando a história, teoria e beleza por trás de grandes obras e compositores.</p>
+                            <a href="https://www.youtube.com/playlist?list=PLLfBXgm5P88ybI0mirWs4N_582GRInX4Y" target="_blank">Assistir no YouTube →</a>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <img src="https://images.unsplash.com/photo-1491841550275-5b462bf92929?q=80&w=1948&auto=format&fit=crop" alt="Curso de Humanidades">
+                        <div class="project-card-content">
+                            <h3>Curso de Humanidades</h3>
+                            <p>Uma série de vídeos educacionais que mergulham em filosofia, história, arte e literatura para expandir o pensamento crítico e a compreensão do mundo.</p>
+                            <a href="https://www.youtube.com/watch?v=PmUVTg4f4ZM" target="_blank">Ver Exemplo de Aula →</a>
                         </div>
                     </div>
                 </div>
@@ -402,6 +421,9 @@
                         <a href="mailto:reginaldoeugenio187@gmail.com" title="Email">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
                         </a>
+                        <a href="https://www.youtube.com/c/DrReginaldoRamos" target="_blank" title="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
                     </div>
                     <div class="linkedin-badge-container">
                         <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="reginaldo-eugenio-ramos-teodoro" data-version="v1"></div>
@@ -413,7 +435,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Dr. Reginaldo E. Ramos Teodoro. Todos os direitos reservados.</p>
+            <p>© 2025 Dr. Reginaldo E. Ramos Teodoro. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -423,7 +445,6 @@
         const revealElements = document.querySelectorAll('.reveal');
         const navLinks = document.querySelectorAll('.main-nav a');
 
-        // Efeito de header ao rolar
         function handleScroll() {
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -432,7 +453,6 @@
             }
         }
 
-        // Animações de entrada ao rolar
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -443,7 +463,6 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // Efeito de máquina de escrever (Typewriter)
         const typewriterElement = document.getElementById('typewriter');
         const phrases = [
             "Construindo sistemas para cuidar de pessoas.",
@@ -467,18 +486,17 @@
             let typeSpeed = isDeleting ? 50 : 100;
 
             if (!isDeleting && charIndex === currentPhrase.length) {
-                typeSpeed = 2000; // Pausa no final da frase
+                typeSpeed = 2000;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500; // Pausa antes de começar a nova frase
+                typeSpeed = 500;
             }
 
             setTimeout(type, typeSpeed);
         }
 
-        // Navegação ativa ao rolar
         const navObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -499,7 +517,6 @@
             navObserver.observe(section);
         });
 
-        // Iniciar tudo
         window.addEventListener('scroll', handleScroll);
         type();
     });
@@ -509,3 +526,4 @@
     
 </body>
 </html>
+```
