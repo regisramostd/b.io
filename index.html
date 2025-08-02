@@ -1,15 +1,3 @@
-Entendido\! Fiz todas as atualizações solicitadas:
-
-1.  **Removi os comentários** do código para deixá-lo mais limpo.
-2.  **Adicionei os dois novos projetos** ("Sonic Spectrum" e "Curso de Humanidades") na seção de projetos, utilizando imagens de placeholder adequadas para cada tema.
-
-O layout da grade de projetos se ajustará automaticamente para exibir os quatro itens.
-
-Aqui está o código final pronto para ser utilizado:
-
-### Código Final Atualizado
-
-```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -211,6 +199,15 @@ Aqui está o código final pronto para ser utilizado:
             color: var(--text-secondary);
         }
 
+        .parallax-divider {
+            height: 300px;
+            background-image: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.6)), url('https://images.unsplash.com/photo-1531685250784-7569952593d2');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -271,23 +268,24 @@ Aqui está o código final pronto para ser utilizado:
         }
         .contact-methods {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center; 
-            gap: 3rem;
+            gap: 2.5rem;
             flex-wrap: wrap;
         }
         .social-links {
             display: flex;
-            flex-direction: column; 
+            flex-direction: row; 
             justify-content: center; 
-            gap: 2rem; 
+            gap: 1.5rem; 
+            flex-wrap: wrap;
         }
         .social-links a {
             color: var(--text-color);
             transition: color 0.3s ease, transform 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
         }
         .social-links a:hover {
             color: var(--primary-color);
@@ -298,10 +296,6 @@ Aqui está o código final pronto para ser utilizado:
             height: 32px;
         }
         
-        .linkedin-badge-container {
-            margin-top: 0;
-        }
-
         footer {
             text-align: center;
             padding: 2rem 0;
@@ -320,9 +314,8 @@ Aqui está o código final pronto para ser utilizado:
                 flex-direction: column;
                 text-align: center;
             }
-            .contact-methods {
-                flex-direction: column;
-                align-items: center;
+            .parallax-divider {
+                background-attachment: scroll; /* Desativa o parallax em telas menores para melhor performance */
             }
         }
     </style>
@@ -369,40 +362,90 @@ Aqui está o código final pronto para ser utilizado:
             </div>
         </section>
 
+        <div class="parallax-divider"></div>
+
         <section id="projects" data-section="projects">
             <div class="container">
                 <h2 class="reveal">Projetos em Destaque</h2>
                 <div class="project-grid">
                     <div class="project-card reveal">
-                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" alt="Projeto IA em Saúde">
+                        <img src="https://images.unsplash.com/photo-1599423300746-b625ed8ba9c9?q=80&w=1287&auto=format&fit=crop" alt="Capa do livro Delirium">
+                        <div class="project-card-content">
+                            <h3>Delirium</h3>
+                            <p>Livro de minha autoria sobre Delirium na prática da Psiquiatria, explorando suas manifestações, diagnóstico e abordagens de tratamento.</p>
+                            <a href="https://www.amazon.com.mx/Delirium-Psiquiatria-Portuguese-Reginaldo-Ramos-ebook/dp/B00S5JS6RC" target="_blank">Ver na Amazon →</a>
+                        </div>
+                    </div>
+                     <div class="project-card reveal">
+                        <img src="https://images.unsplash.com/photo-1532938214824-754b1e572934?q=80&w=1470&auto=format&fit=crop" alt="Imagem representando planejamento em saúde">
+                        <div class="project-card-content">
+                            <h3>PPA e Saúde Municipal</h3>
+                            <p>Atuação no desenvolvimento e análise do Plano Plurianual de Saúde do município de Correia Pinto (SC) para o quadriênio 2022-2025.</p>
+                            <a href="https://correiapinto.sc.gov.br/uploads/sites/19/2024/06/Plano-Municipal-de-Saude-do-Municipio-de-Correia-Pinto-SC-2022-2025.pdf" target="_blank">Ver o Plano →</a>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1287&auto=format&fit=crop" alt="Símbolo de pesquisa acadêmica e ambiente">
+                        <div class="project-card-content">
+                            <h3>Mestrando em Saúde e Ambiente</h3>
+                            <p>Pesquisa acadêmica no mestrado da UNIPLAC, focada nas interseções complexas entre a saúde humana e a qualidade do ambiente.</p>
+                            <a href="https://data.uniplaclages.edu.br/publicacoes/editais/a686b15ce5d84949d1a3b03457383b36.pdf" target="_blank">Ver Edital →</a>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" alt="Representação de Inteligência Artificial na Saúde">
                         <div class="project-card-content">
                             <h3>Predictive Health AI Engine</h3>
-                            <p>Pipeline inteligente que combina e-SUS PEC, IA generativa (GPT), predição de faltas e WhatsApp automatizado para otimizar a agenda e reduzir ausências em consultas.</p>
+                            <p>Pipeline inteligente que combina e-SUS PEC, IA generativa (GPT), predição de faltas e WhatsApp para otimizar a agenda e reduzir ausências.</p>
                             <a href="https://github.com/regisramostd" target="_blank">Saiba Mais →</a>
                         </div>
                     </div>
                     <div class="project-card reveal">
-                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1973&auto=format&fit=crop" alt="Livro Filosofia da Engenharia">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=1973&auto=format&fit=crop" alt="Livro representando a Filosofia da Engenharia">
                         <div class="project-card-content">
                             <h3>Filosofia Aplicada à Engenharia</h3>
-                            <p>Obra autoral que propõe um novo perfil de engenheiro-pensador, integrando ética, complexidade e pensamento sistêmico ao desenvolvimento tecnológico.</p>
+                            <p>Obra autoral que propõe um novo perfil de engenheiro-pensador, integrando ética e pensamento sistêmico ao desenvolvimento tecnológico.</p>
                             <a href="https://github.com/regisramostd" target="_blank">Ver Publicação →</a>
                         </div>
                     </div>
                     <div class="project-card reveal">
-                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop" alt="Podcast Sonic Spectrum">
+                        <img src="https://images.unsplash.com/photo-1589165353283-421e351833d2?q=80&w=1470&auto=format&fit=crop" alt="Pessoas jogando xadrez">
+                        <div class="project-card-content">
+                            <h3>Xadrez nas Escolas (CE 012)</h3>
+                            <p>Projeto de ensino de xadrez no CE 012 em Bragança Paulista, fomentando raciocínio lógico e concentração nos alunos.</p>
+                            <a href="https://www.facebook.com/media/set/?set=a.472566202841887.1073741879.129460793819098&type=3" target="_blank">Ver no Facebook →</a>
+                        </div>
+                    </div>
+                     <div class="project-card reveal">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop" alt="Podcast sobre música clássica">
                         <div class="project-card-content">
                             <h3>Sonic Spectrum</h3>
-                            <p>Podcast sobre música clássica no YouTube, explorando a história, teoria e beleza por trás de grandes obras e compositores.</p>
+                            <p>Podcast sobre música clássica no YouTube, explorando a história e teoria por trás de grandes obras e compositores.</p>
                             <a href="https://www.youtube.com/playlist?list=PLLfBXgm5P88ybI0mirWs4N_582GRInX4Y" target="_blank">Assistir no YouTube →</a>
                         </div>
                     </div>
                     <div class="project-card reveal">
-                        <img src="https://images.unsplash.com/photo-1491841550275-5b462bf92929?q=80&w=1948&auto=format&fit=crop" alt="Curso de Humanidades">
+                        <img src="https://images.unsplash.com/photo-1598387993441-2b311591173e?q=80&w=1200&auto=format&fit=crop" alt="Busto de um filósofo grego">
                         <div class="project-card-content">
                             <h3>Curso de Humanidades</h3>
-                            <p>Uma série de vídeos educacionais que mergulham em filosofia, história, arte e literatura para expandir o pensamento crítico e a compreensão do mundo.</p>
+                            <p>Série de vídeos que mergulham em filosofia, história, arte e literatura para expandir o pensamento crítico.</p>
                             <a href="https://www.youtube.com/watch?v=PmUVTg4f4ZM" target="_blank">Ver Exemplo de Aula →</a>
+                        </div>
+                    </div>
+                     <div class="project-card reveal">
+                        <img src="https://images.unsplash.com/photo-1620306134578-de3d36c53e6d?q=80&w=1287&auto=format&fit=crop" alt="Estilo de arte japonesa Kintsugi, representando a beleza na imperfeição">
+                        <div class="project-card-content">
+                            <h3>A Beleza Imperfeita do Agora</h3>
+                            <p>Artigo sobre a parashá Korach, explorando temas de filosofia e espiritualidade a partir de textos sagrados.</p>
+                            <a href="https://www.britbracha.org/post/a-beleza-imperfeita-do-agora-parashat-korach-5785" target="_blank">Ler Artigo →</a>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <img src="https://images.unsplash.com/photo-1524143986875-3b098d78b363?q=80&w=1287&auto=format&fit=crop" alt="Rolo de Torá antigo">
+                        <div class="project-card-content">
+                            <h3>Estudos da Parashat Terumah</h3>
+                            <p>Análise e reflexão sobre a porção semanal da Torá, Terumah, conectando sabedoria antiga com a vida contemporânea.</p>
+                            <a href="https://www.britbracha.org/post/parashat-terumah" target="_blank">Ler Artigo →</a>
                         </div>
                     </div>
                 </div>
@@ -418,11 +461,20 @@ Aqui está o código final pronto para ser utilizado:
                         <a href="https://github.com/regisramostd" target="_blank" title="GitHub">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                         </a>
-                        <a href="mailto:reginaldoeugenio187@gmail.com" title="Email">
+                        <a href="mailto:reginaldoeugenio187@gmail.com" title="Email Principal">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                        </a>
+                        <a href="mailto:rert@europe.com" title="Email Alternativo">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
                         </a>
                         <a href="https://www.youtube.com/c/DrReginaldoRamos" target="_blank" title="YouTube">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                        <a href="https://orcid.org/0009-0008-0711-578X" target="_blank" title="ORCID">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.061 18.519c-1.32.228-2.253.217-2.946.217-1.539 0-2.839-.538-3.565-1.576-.743-1.054-.96-2.459-.96-4.174 0-2.27.426-3.932 1.218-5.016.782-1.068 2.012-1.615 3.527-1.615.939 0 2.21.254 2.839.469l-.396 1.411c-.722-.254-1.428-.437-1.996-.437-.886 0-1.642.378-2.122 1.092-.501.711-.756 1.838-.756 3.278 0 1.52.272 2.684.799 3.486.538.814 1.264 1.157 2.146 1.157.585 0 1.354-.153 2.048-.487l.426 1.378zm5.034-11.965h-1.642v10.27h1.642v-10.27z"/></svg>
+                        </a>
+                         <a href="http://lattes.cnpq.br/1080904861910894" target="_blank" title="Lattes">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 22h-4v-15h4v15zm11.316-15.061c-2.36-1.362-4.996-1.488-7.316.061v-2h-4v15h4v-8.2c0-2.316.596-3.834 2.832-3.834h.023c2.235 0 2.826 1.517 2.826 3.834v8.2h4v-9.5c0-3.321-1.396-5.564-4.684-5.564zm1.947-1.939h4.737v-4h-4.737v4z"/></svg>
                         </a>
                     </div>
                     <div class="linkedin-badge-container">
@@ -526,4 +578,3 @@ Aqui está o código final pronto para ser utilizado:
     
 </body>
 </html>
-```
